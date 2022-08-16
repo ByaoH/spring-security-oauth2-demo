@@ -1,0 +1,24 @@
+spring:
+  security:
+    oauth2:
+      client:
+        registration:
+          gitee:
+            client-id: 246dc3e8acf8582256d0932e4e2bf2c5a5f64c0dba864d8183e0dec56a71a1ea
+            client-secret: baeb04a9855ae4d2f77154d16d8996653c344ed1f80cee7f884e3ac3bf77d56f
+            authorization-grant-type: authorization_code
+            redirect-uri: '{baseUrl}/{action}/oauth2/code/{registrationId}'
+            client-authentication-method: POST
+            scope: user_info
+        provider:
+          gitee:
+            authorization-uri: https://gitee.com/oauth/authorize
+            token-uri: https://gitee.com/oauth/token
+            user-info-uri: https://gitee.com/api/v5/user
+            user-name-attribute: name
+# ???? ????
+logging:
+  level:
+    org.springframework.web: trace
+    org.springframework.security: trace
+    org.springframework.security.oauth2: debug
